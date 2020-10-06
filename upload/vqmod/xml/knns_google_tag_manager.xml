@@ -1,63 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <modification
 	xmlns="https://github.com/vqmod/vqmod"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="https://github.com/vqmod/vqmod https://raw.githubusercontent.com/vqmod/vqmod/master/vqmod.xsd"
 	>
 	<id><![CDATA[[VQMOD] Google Tag Manager]]></id>
-	<version>0.1.0</version>
+	<version>0.2.0</version>
 	<vqmver>2.6.3</vqmver>
 	<author>kanenas.net (aka Nikolas Branis) - nbran@kanenas.net</author>
-    <file name="catalog/view/theme/default/template/common/header.tpl" error="log">
-        <operation error="skip">
-            <search position="after"><![CDATA[<head>]]></search>
-            <add><![CDATA[
+	<file path="catalog/view/theme/*/template/common/" name="header.tpl" error="log">
+		<operation error="skip">
+			<search position="before"><![CDATA[</head>]]></search>
+			<add><![CDATA[
 <?php // kanenas: knns_google_tag_manager.xml (start) << ?>
-<!-- Google Tag Manager --> 
+<!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','XXX-XXXXXXX');</script>
-<!-- End Google Tag Manager --> 
+<!-- End Google Tag Manager -->
 <?php // kanenas: knns_google_tag_manager.xml (end) << ?>
-            ]]></add>
-        </operation>
-        <operation error="skip">
-            <search position="after"><![CDATA[<body class="<?php echo $class; ?>">]]></search>
-            <add><![CDATA[
+			]]></add>
+		</operation>
+	</file>
+	<file path="catalog/view/theme/*/template/common/" name="footer.tpl" error="log">
+		<operation error="skip">
+			<search position="before"><![CDATA[</body>]]></search>
+			<add><![CDATA[
 <?php // kanenas: knns_google_tag_manager.xml (start) << ?>
-<!-- Google Tag Manager (noscript) --> 
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=XXX-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=XXX-XXXXXXX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <?php // kanenas: knns_google_tag_manager.xml (end) << ?>
-            ]]></add>
-        </operation>
-    </file>
-    <file name="catalog/view/theme/journal2/template/common/header.tpl" error="log">
-        <operation error="skip">
-            <search position="after"><![CDATA[<head>]]></search>
-            <add><![CDATA[
-<?php // kanenas: knns_google_tag_manager.xml (start) << ?>
-<!-- Google Tag Manager --> 
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','XXX-XXXXXXX');</script>
-<!-- End Google Tag Manager --> 
-<?php // kanenas: knns_google_tag_manager.xml (end) << ?>
-            ]]></add>
-        </operation>
-        <operation error="skip">
-            <search position="after"><![CDATA[<body>]]></search>
-            <add><![CDATA[
-<?php // kanenas: knns_google_tag_manager.xml (start) << ?>
-<!-- Google Tag Manager (noscript) --> 
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=XXX-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-<?php // kanenas: knns_google_tag_manager.xml (end) << ?>
-            ]]></add>
-        </operation>
-    </file>
+			]]></add>
+		</operation>
+	</file>
 </modification>
