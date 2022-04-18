@@ -5,7 +5,7 @@
 	xsi:schemaLocation="https://github.com/vqmod/vqmod https://raw.githubusercontent.com/vqmod/vqmod/master/vqmod.xsd"
 	>
 	<id><![CDATA[[VQMOD] Google Tag Manager]]></id>
-	<version>0.2.0</version>
+	<version>0.3.0</version>
 	<vqmver>2.6.3</vqmver>
 	<author>kanenas.net (aka Nikolas Branis) - nbran@kanenas.net</author>
 	<file path="catalog/view/theme/*/template/common/" name="header.tpl" error="log">
@@ -23,10 +23,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <?php // kanenas: knns_google_tag_manager.xml (end) << ?>
 			]]></add>
 		</operation>
-	</file>
-	<file path="catalog/view/theme/*/template/common/" name="footer.tpl" error="log">
 		<operation error="skip">
-			<search position="before"><![CDATA[</body>]]></search>
+			<search position="after"><![CDATA[<body class="<?php echo $class; ?>">]]></search>
 			<add><![CDATA[
 <?php // kanenas: knns_google_tag_manager.xml (start) << ?>
 <!-- Google Tag Manager (noscript) -->
